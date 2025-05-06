@@ -11,7 +11,10 @@
 
     <body>
         <h1>シフト管理システム</h1>
-        <form id="form" action="/posts" method="POST">
+        <form action="/api/logout" method="POST">
+            <button type="submit">ログアウト</button>
+        </form>
+        <form action="/api/posts" method="POST">
             <label>ユーザー名<input type="text" name="user" pattern="[a-z]+" required></label>
             <label>日付<input type="date" name="date" required></label>
             <label>出社時刻<input type="time" name="start" required></label>
@@ -33,6 +36,6 @@
             </thead>
             <tbody></tbody>
         </table>
-        <script type="module" src="main.js"></script>
+        <script type="module" src="index.js"></script>
     </body>
 </html>

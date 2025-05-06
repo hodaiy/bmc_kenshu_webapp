@@ -4,3 +4,4 @@
 {"user":"a","date":"2025-05-11","start":"20:02","end":"19:02","comment":""}
 {"user":"taro","date":"2020-05-01","start":"16:27","end":"18:20","comment":"hello"}
 {"user":"taro","date":"2020-05-01","start":"16:27","end":"18:20","comment":"hello"}
+{"user":"a","date":"2025-05-02","start":"21:45","end":"23:45","comment":""}

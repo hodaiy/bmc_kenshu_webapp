@@ -1,5 +1,5 @@
 const postTable = document.querySelector('#postTable tbody');
-    const res = await fetch('/posts');
+    const res = await fetch('/api/posts');
     const posts = await res.json();
     posts.forEach(post => {
         const row = document.createElement('tr');
