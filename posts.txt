@@ -1,6 +1,6 @@
 {"user":"tanaka","date":"2025-05-07","start":"16:27","end":"19:27","comment":"hello"}
 {"user":"neuron","date":"2025-05-08","start":"16:05","end":"17:05","comment":"yeah"}
-{"user":"soma","date":"2025-04-30","start":"16:08","end":"19:06","comment":"yatta"}
+{"user":"akasa","date":"2025-04-30","start":"16:08","end":"19:06","comment":"yatta"}
 {"user":"a","date":"2025-05-11","start":"20:02","end":"19:02","comment":""}
 {"user":"taro","date":"2020-05-01","start":"16:27","end":"18:20","comment":"hello"}
 {"user":"taro","date":"2020-05-01","start":"16:27","end":"18:20","comment":"hello"}
