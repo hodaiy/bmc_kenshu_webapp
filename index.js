@@ -253,5 +253,5 @@ app.get('/api/user', authTokenMiddleware, (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log('Hello World');
+  console.log(`Listening on ${PORT}`);
 });
