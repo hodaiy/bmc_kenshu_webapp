@@ -252,6 +252,17 @@ app.get('/api/user', authTokenMiddleware, (req, res) => {
   res.json({ user });
 });
 
-app.listen(PORT, () => {
-  console.log(`Listening on ${PORT}`);
-});
+(async () => {
+  try {
+    const conn = await db.getConnection();
+    console.log('MySQL connection succeeded');
+    conn.release();
+
+    app.listen(PORT, () => {
+      console.log(`Server is running on http://localhost:${PORT}`);
+    });
+  } catch (err) {
+    console.error('MySQL connection failed:', err.message);
+    process.exit(1);
+  }
+})();
