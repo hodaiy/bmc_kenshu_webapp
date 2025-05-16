@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ログイン</title>
+    <style>
+      input {
+        display: block;
+        padding: 6px 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ログイン</h1>
+    <form id="loginForm">
+      <label
+        >ユーザー名<input type="text" name="user" size="24" required
+      /></label>
+      <label
+        >パスワード<input type="password" name="password" size="24" required
+      /></label>
+      <button type="submit">ログイン</button>
+    </form>
+    <button onclick="location.href='/pages/register'">新規登録へ</button>
+    <p id="error" style="color: red"></p>
+    <script type="module" src="/app_login.js"></script>
+  </body>
+</html>

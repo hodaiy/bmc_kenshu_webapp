@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>シフト管理システム</title>
+
+    <style>
+      input,
+      textarea {
+        display: block;
+        font-size: 12px;
+        padding: 4px;
+      }
+      .time_container {
+        display: flexbox;
+      }
+      .time_input {
+        width: 60px;
+        padding: 6px 8px;
+        font-family: monospace;
+        text-align: center;
+        display: inline;
+      }
+      .time_tbd_checkbox {
+        display: inline-block;
+      }
+
+      .table-container {
+        width: 60vw;
+        height: 300px;
+        overflow: auto;
+        border: 1px solid #ccc;
+      }
+
+      table {
+        font-size: 12px;
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+      }
+
+      th {
+        font-size: 12px;
+        padding: 6px;
+        line-height: 1.5;
+      }
+      td {
+        font-size: 12px;
+        padding: 3px 3px;
+        line-height: 1.5;
+        border-bottom: 1px solid#000;
+      }
+      td.comment {
+        white-space: normal;
+        overflow-wrap: anywhere;
+      }
+
+      td:not(.comment) {
+        white-space: nowrap;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>シフト管理システム</h1>
+    <p id="username"></p>
+    <form id="shiftForm">
+      <label>日付<input type="date" name="date" required /></label>
+      <label>出社時刻</label>
+      <div class="time_container">
+        <label>
+          <input
+            type="time"
+            name="start"
+            class="time_input"
+            id="startTime"
+            pattern="^([01][0-9]|2[0-3]):[0-5][0-9]|99:99$"
+            required /></label
+        ><label
+          ><input
+            type="checkbox"
+            class="time_tbd_checkbox"
+            id="start_tbd"
+          />未定？</label
+        >
+      </div>
+      <label>退社時刻</label>
+      <div class="time_container">
+        <label
+          ><input
+            type="time"
+            name="end"
+            class="time_input"
+            id="endTime"
+            pattern="^([01][0-9]|2[0-3]):[0-5][0-9]|99:99$"
+            required /></label
+        ><label
+          ><input
+            type="checkbox"
+            class="time_tbd_checkbox"
+            id="end_tbd"
+          />未定？</label
+        >
+      </div>
+      <label
+        >コメント<textarea name="comment" pattern="^.{0,500}$"></textarea>
+      </label>
+      <div id="submitDiv">
+        <button type="submit" id="submitButton"></button>
+      </div>
+      <p id="error" style="color: red"></p>
+    </form>
+    <h2>勤務表</h2>
+    <div class="table-container">
+      <table>
+        <colgroup>
+          <col style="width: 8em" />
+          <col style="width: 8em" />
+          <col style="width: 5em" />
+          <col style="width: 5em" />
+          <col style="width: auto" />
+          <col style="width: 100px" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>ユーザー</th>
+            <th>日付</th>
+            <th>出社時刻</th>
+            <th>退社時刻</th>
+            <th>コメント</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="postBody"></tbody>
+      </table>
+    </div>
+    <form action="/api/logout" method="POST">
+      <button type="submit">ログアウト</button>
+    </form>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
